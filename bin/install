@@ -52,11 +52,10 @@ function install_ccache() {
     make install >/dev/null || fail "Could not install"
 
     echo "The installation was successful!"
-  ) ||
-    (
-      rm -rf "$install_path"
-      fail "An error occurred"
-    )
+  ) || (
+    rm -rf "$install_path"
+    fail "An error occurred"
+  )
 
   rm -rf "$tmp_download_dir"
 }
