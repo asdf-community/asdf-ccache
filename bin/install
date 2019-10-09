@@ -36,7 +36,7 @@ function install_ccache() {
   local distination="${tmp_download_dir}/dist"
 
   (
-    echo "∗ Downloading and installing ccache..."
+    echo "∗ Downloading ccache source..."
     curl --silent --location --create-dirs --output "$source_path" "$download_url" || fail "Could not download ccache $version"
     mkdir -p "$distination"
     tar zxf "$source_path" -C "$distination" --strip-components=1
