@@ -57,6 +57,8 @@ function install_ccache() {
       rm -rf "$install_path"
       fail "An error occurred"
     )
+
+  rm -rf "$tmp_download_dir"
 }
 
 install_ccache "$ASDF_INSTALL_TYPE" "$ASDF_INSTALL_VERSION" "$ASDF_INSTALL_PATH"
