@@ -1,0 +1,27 @@
+name: Main workflow
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macOS-latest]
+        ccache: [3.1.12, 3.7.4]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
+      - name: Install asdf
+        run: |
+          git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+      - name: Install ccache and run test
+        run: |
+          . $HOME/asdf/asdf.sh
+          asdf plugin-add ccache $GITHUB_WORKSPACE
+          asdf install ccache ${{ matrix.ccache }}
+          asdf global ccache ${{ matrix.ccache }}
+          ccache --version
