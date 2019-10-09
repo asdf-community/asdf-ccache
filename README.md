@@ -18,7 +18,7 @@ ccache plugin for asdf version manager
   - GNU make
   - curl
   - git
-  - unzip
+  - tar
 
 ## Installation
 
