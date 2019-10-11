@@ -28,9 +28,9 @@ function install_ccache() {
   local install_path=$3
 
   local download_url="https://github.com/ccache/ccache/releases/download/v${version}/ccache-${version}.tar.gz"
-  local file_name="ocaml-${version}.tar.gz"
+  local file_name="ccache-${version}.tar.gz"
   local tmp_download_dir
-  tmp_download_dir=$(mktemp -d -t ocaml_tmp_XXXXXX)
+  tmp_download_dir=$(mktemp -d -t ccache_tmp_XXXXXX)
 
   local source_path="${tmp_download_dir}/${file_name}"
   local distination="${tmp_download_dir}/dist"
