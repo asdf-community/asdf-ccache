@@ -16,8 +16,8 @@ jobs:
         uses: actions/checkout@v1
 
       - name: Install asdf
-        run: |
-          git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+        run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
+
       - name: Install ccache and run test
         run: |
           . $HOME/asdf/asdf.sh
