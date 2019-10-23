@@ -28,7 +28,7 @@ function install_ccache() {
   local install_path=$3
 
   if [ "$install_type" != "version" ]; then
-    fail "asdf-ccache supports release installs only."
+    fail "asdf-ccache supports release installs only"
   fi
 
   local download_url="https://github.com/ccache/ccache/releases/download/v${version}/ccache-${version}.tar.gz"
