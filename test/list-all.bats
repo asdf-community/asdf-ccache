@@ -18,5 +18,5 @@
 @test "list-all command fails if first line is not the oldest version" {
   run asdf list-all ccache
   [ "$status" -eq 0 ]
-  [ "${lines[0]}" = "1.2.0-rc2" ]
+  [ "${lines[0]}" = "3.2" ]
 }
