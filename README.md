@@ -1,5 +1,5 @@
 <div align="center">
-<h1>asdf-ccache 📦</h1>
+<h1>asdf-ccache</h1>
 <span><a href="https://ccache.dev">ccache</a> plugin for asdf version manager</span>
 </div>
 <hr />
