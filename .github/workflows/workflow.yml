@@ -4,35 +4,15 @@ on:
   push:
     paths-ignore:
       - "**.md"
+      - ".all-contributorsrc"
   pull_request:
     paths-ignore:
       - "**.md"
+      - ".all-contributorsrc"
   schedule:
     - cron: "0 0 * * 5"
 
 jobs:
-  build:
-    strategy:
-      matrix:
-        os: [ubuntu-latest, macOS-latest]
-
-    runs-on: ${{ matrix.os }}
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v1
-
-      - name: Install asdf
-        run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
-
-      - name: Install ccache and print ccache version
-        run: |
-          . $HOME/asdf/asdf.sh
-          asdf plugin-add ccache $GITHUB_WORKSPACE
-          asdf install ccache latest
-        env:
-          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
   plugin_test:
     strategy:
       matrix:
@@ -49,11 +29,11 @@ jobs:
           GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   test:
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Install asdf
         run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
@@ -71,17 +51,17 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Run ShellCheck
         run: shellcheck bin/*
 
   format:
-    runs-on: macOS-latest
+    runs-on: macos-latest
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v1
+        uses: actions/checkout@v2
 
       - name: Install shfmt
         run: brew install shfmt
