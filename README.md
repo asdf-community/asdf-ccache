@@ -14,6 +14,7 @@
 - Make sure you have the required dependencies installed:
   - A C++ compiler
   - A C compiler
+  - CMake (when installing ccache version 4 or newer)
   - GNU make
   - curl
   - git
