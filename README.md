@@ -43,6 +43,7 @@ Thanks goes to these wonderful people
   <tr>
     <td align="center"><a href="https://bsky.moe"><img src="https://avatars3.githubusercontent.com/u/38746192?v=4" width="100px;" alt=""/><br /><sub><b>BSKY</b></sub></a><br /><a href="https://github.com/asdf-community/asdf-ccache/commits?author=imbsky" title="Code">💻</a> <a href="https://github.com/asdf-community/asdf-ccache/commits?author=imbsky" title="Documentation">📖</a> <a href="#maintenance-imbsky" title="Maintenance">🚧</a> <a href="#infra-imbsky" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
     <td align="center"><a href="https://sasurau4.github.io/profile/"><img src="https://avatars3.githubusercontent.com/u/13580199?v=4" width="100px;" alt=""/><br /><sub><b>Daiki Ihara</b></sub></a><br /><a href="#infra-sasurau4" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a></td>
+    <td align="center"><a href="https://www.jwillikers.com"><img src="https://avatars1.githubusercontent.com/u/19399197?v=4" width="100px;" alt=""/><br /><sub><b>Jordan Williams</b></sub></a><br /><a href="https://github.com/asdf-community/asdf-ccache/commits?author=Jordan Williams" title="Code">💻</a> <a href="https://github.com/asdf-community/asdf-ccache/commits?author=Jordan Williams" title="Documentation">📖</a></td>
   </tr>
 </table>
 
