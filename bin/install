@@ -47,7 +47,13 @@ install_ccache() {
     cd "$distination"
 
     echo "∗ Configuring..."
-    ./configure --prefix="$install_path" >/dev/null || fail "Could not configure"
+    if [[ "$version" =~ ^[0-3]\. ]]; then
+      ./configure --prefix="$install_path" >/dev/null || fail "Could not configure"
+    else
+      mkdir build
+      cd build
+      cmake -DCMAKE_INSTALL_PREFIX="$install_path" -DCMAKE_BUILD_TYPE=Release -DZSTD_FROM_INTERNET=yes .. >/dev/null || fail "Could not configure CMake"
+    fi
 
     echo "∗ Compiling..."
     make &>log.make || fail "Could not compile"
