@@ -2,31 +2,28 @@ name: Main workflow
 
 on:
   push:
-    paths-ignore:
-      - "**.md"
-      - ".all-contributorsrc"
   pull_request:
-    paths-ignore:
-      - "**.md"
-      - ".all-contributorsrc"
   schedule:
-    - cron: "0 0 * * 5"
+    - cron: 0 0 * * 5
 
 jobs:
   plugin_test:
     strategy:
+      fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os:
+          - macos-latest
+          - ubuntu-latest
 
     runs-on: ${{ matrix.os }}
 
     steps:
       - name: asdf_plugin_test
-        uses: asdf-vm/actions/plugin-test@v1.0.0
+        uses: asdf-vm/actions/plugin-test@v1
         with:
           command: ccache --version
         env:
-          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_API_TOKEN: ${{ github.token }}
 
   test:
     runs-on: macos-latest
@@ -39,12 +36,12 @@ jobs:
         run: git clone https://github.com/asdf-vm/asdf.git $HOME/asdf
 
       - name: Test plugin
-        env:
-          GITHUB_API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           . $HOME/asdf/asdf.sh
           asdf plugin-add ccache $GITHUB_WORKSPACE
           bats test
+        env:
+          GITHUB_API_TOKEN: ${{ github.token }}
 
   lint:
     runs-on: ubuntu-latest
