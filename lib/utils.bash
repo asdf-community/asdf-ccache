@@ -64,6 +64,7 @@ install_version() {
       cmake -DCMAKE_INSTALL_PREFIX="$install_path" \
         -DCMAKE_BUILD_TYPE=Release \
         -DZSTD_FROM_INTERNET=yes \
+        -DHIREDIS_FROM_INTERNET=yes \
         -S "$source_dir" -B "$build_dir" >/dev/null || fail "Could not configure CMake"
     fi
 
