@@ -47,7 +47,7 @@ install_ccache() {
     cd "$distination"
 
     echo "∗ Configuring..."
-    if [[ "$version" =~ ^[0-3]\. ]]; then
+    if [[ $version =~ ^[0-3]\. ]]; then
       ./configure --prefix="$install_path" >/dev/null || fail "Could not configure"
     else
       mkdir build
