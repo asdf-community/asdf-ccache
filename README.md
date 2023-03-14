@@ -4,8 +4,6 @@
 
 # Build history
 
-[![Build history](https://buildstats.info/github/chart/asdf-community/asdf-ccache?branch=master)](https://github.com/asdf-community/asdf-ccache/actions)
-
 ## Prerequirements
 
 - Make sure you have the required dependencies installed:
